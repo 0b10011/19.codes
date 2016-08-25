@@ -1,0 +1,15 @@
+{
+	"useTabChar": true,
+	"tabSize": 2,
+	"scrollPastEnd": true,
+	"softTabs": false,
+	"language.fileNames": {
+		"Makefile": "bash",
+		"composer.lock": "json"
+	},
+	"brackets-ruler.guideEnabled": true,
+	"brackets-ruler.guidePosition": 80,
+	"jwolfe.file-tree-exclude.list": [
+		"files"
+	]
+}
