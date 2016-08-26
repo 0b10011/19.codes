@@ -2,13 +2,16 @@
 	/* Avoid having content cut off when printing */
 	margin: 0;
 }
-@media print (orientation: landscape) {
-	body { font-size: 3vmin !important }
-}
 @media print {
+	/* Make phone number stick out more when printed */
 	ul { font-size: 1.7em !important }
 }
+@media (min-aspect-ratio: 3/2) {
+	/* Always rely on vh when wide enough */
+	body { font-size: 3.3vh !important }
+}
 @media not all and (color) {
+	/* Display all text in black on non-color mediums */
 	* { color: #000 !important }
 }
 
