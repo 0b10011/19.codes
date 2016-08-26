@@ -46,10 +46,26 @@ h1 {
 	color: #555;
 	white-space: nowrap;
 }
-h1 > strong {
+h1 > a {
 	font-style: normal;
 	color: #333;
 }
+h1 > .resume {
+	position: absolute;
+	margin-top: 0;
+	color: transparent;
+	display: inline;
+	visibility: hidden;
+}
+h1 > a:hover + .resume {
+	color: #555;
+	visibility: visible;
+}
+h1 > a:hover ~ .title {
+	color: transparent;
+	visibility: hidden;
+}
+
 
 a {
 	text-decoration: none;
