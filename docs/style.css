@@ -71,13 +71,19 @@ body:not([class^="hover-"]) .text {
 	color: #333;
 }
 body:not([class^="hover-"]) pre > .blog,
-body[class="hover-blog"] .blog,
+body[class="hover-blog"] span.blog,
+body[class="hover-blog"] a.blog:active,
+body[class="hover-blog"] a.blog:focus,
+body[class="hover-blog"] a.blog:hover,
 body[class="hover-blog"] .blog-social {
 	color: #247;
 }
 body:not([class^="hover-"]) pre > .social,
-body[class="hover-social"] .social,
-body[class="hover-social"] .blog-social {
+body[class="hover-social"] span.social,
+body[class="hover-social"] a.social:active,
+body[class="hover-social"] a.social:focus,
+body[class="hover-social"] a.social:hover,
+body[class="hover-social"] span.blog-social {
 	color: #a33;
 }
 body:not([class^="hover-"]) pre > .blog-social {
@@ -85,12 +91,18 @@ body:not([class^="hover-"]) pre > .blog-social {
 }
 
 body:not([class^="hover-"]) pre > .email,
-body[class="hover-email"] .email,
+body[class="hover-email"] span.email,
+body[class="hover-email"] a.email:active,
+body[class="hover-email"] a.email:focus,
+body[class="hover-email"] a.email:hover,
 body[class="hover-email"] .email-here {
 	color: #282;
 }
 body:not([class^="hover-"]) pre > .here,
-body[class="hover-here"] .here,
+body[class="hover-here"] span.here,
+body[class="hover-here"] a.here:active,
+body[class="hover-here"] a.here:focus,
+body[class="hover-here"] a.here:hover,
 body[class="hover-here"] .email-here {
 	color: #a72;
 }
