@@ -8,6 +8,9 @@
 @media print {
 	ul { font-size: 1.7em }
 }
+@media not all and (color) {
+	* { color: #000 !important }
+}
 
 * {
 	line-height: 1.5;
