@@ -6,7 +6,7 @@
 	body { font-size: 3vmin !important }
 }
 @media print {
-	ul { font-size: 1.7em }
+	ul { font-size: 1.7em !important }
 }
 @media not all and (color) {
 	* { color: #000 !important }
