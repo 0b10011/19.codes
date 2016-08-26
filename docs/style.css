@@ -2,6 +2,10 @@
 	/* Avoid having content cut off when printing */
 	margin: 0;
 }
+@media print {
+	body { font-size: 3vmin !important }
+	ul { font-size: 1.7em }
+}
 
 * {
 	line-height: 1.5;
@@ -26,17 +30,31 @@ body {
 	overflow: hidden;
 }
 
-h1, pre {
+h1, pre, ul {
 	font-family: "source-code-pro", monospace;
-	font-size: 1.7em;
 	color: #ccc;
 }
+h1, pre { font-size: 1.7em }
+
 h1 {
 	font-weight: normal;
 	color: #555;
 	white-space: nowrap;
 }
-h1 > strong {
+h1 > strong { color: #333 }
+
+ul {
+	display: flex;
+	font-size: 1.2em;
+}
+li {
+	margin: 0 1em;
+	list-style-type: none;
+}
+body:not([class^="hover-"]) li > a,
+li > a:hover,
+li > a:focus,
+li > a:active {
 	color: #333;
 }
 
@@ -56,6 +74,7 @@ a:focus {
 }
 
 /* Section colors */
+li > a,
 .text,
 .blog,
 .social,
