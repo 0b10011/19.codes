@@ -8,7 +8,6 @@ function linkReset () {
 
 var links = document.getElementsByTagName("a");
 for (var i = 0; i < links.length; i += 1) {
-	console.log(links[i]);
 	links[i].addEventListener(
 		"mouseover",
 		linkEnter,
