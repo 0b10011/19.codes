@@ -10,6 +10,10 @@
 	/* Always rely on vh when wide enough */
 	body { font-size: 3.3vh !important }
 }
+@media (min-width: 900px) and (min-height: 600px) {
+	/* Shrink text down a bit on tablets/desktops */
+	body { font-size: 2vmin !important }
+}
 @media not all and (color) {
 	/* Display all text in black on non-color mediums */
 	* { color: #000 !important }
