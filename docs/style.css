@@ -33,12 +33,10 @@ h1, pre {
 }
 h1 {
 	font-weight: normal;
-	font-style: italic;
 	color: #555;
 	white-space: nowrap;
 }
 h1 > strong {
-	font-style: normal;
 	color: #333;
 }
 
