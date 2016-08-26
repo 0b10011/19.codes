@@ -12,18 +12,13 @@ body {
 	padding: 0;
 }
 body {
+	font-size: 2.5vmin;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	color: #333;
 	overflow: hidden;
-}
-@media (orientation: landscape) {
-	body { font-size: 2.5vh }
-}
-@media (orientation: portrait) {
-	body { font-size: 2.5vw }
 }
 
 h1, pre {
