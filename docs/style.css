@@ -1,3 +1,8 @@
+@page {
+	/* Avoid having content cut off when printing */
+	margin: 0;
+}
+
 * {
 	line-height: 1.5;
 	margin: 0;
