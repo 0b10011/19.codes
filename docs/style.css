@@ -26,14 +26,6 @@ body {
 @media (orientation: portrait) {
 	body { font-size: 2.5vw }
 }
-@media print {
-	.has-alt {
-		display: none;
-	}
-	.has-alt + a {
-		display: inline;
-	}
-}
 
 h1, pre {
 	font-family: "Source Code Pro", monospace;
