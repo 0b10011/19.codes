@@ -22,7 +22,7 @@ body {
 }
 
 h1, pre {
-	font-family: "Source Code Pro", monospace;
+	font-family: monospace;
 	font-size: 1.7em;
 	color: #ccc;
 }
