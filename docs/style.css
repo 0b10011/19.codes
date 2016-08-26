@@ -2,8 +2,10 @@
 	/* Avoid having content cut off when printing */
 	margin: 0;
 }
-@media print {
+@media print (orientation: landscape) {
 	body { font-size: 3vmin !important }
+}
+@media print {
 	ul { font-size: 1.7em }
 }
 
