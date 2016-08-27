@@ -5,6 +5,8 @@
 @media print {
 	/* Make phone number stick out more when printed */
 	ul { font-size: 1.7em !important }
+	#output-wrapper { display: none !important }
+	#title { visibility: visible !important }
 }
 @media (min-aspect-ratio: 3/2) {
 	/* Always rely on vh when wide enough */
@@ -54,6 +56,35 @@ h1 {
 	white-space: nowrap;
 }
 h1 > strong { color: #333 }
+#cursor,
+#title {
+	white-space: pre;
+}
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #333;
+  }
+}
+#output-wrapper.init {
+	display: inline;
+	position: absolute;
+	margin-top: 0;
+}
+#output {
+	white-space: pre;
+}
+#cursor {
+	margin-top: 0;
+}
+#cursor.blinking {
+  animation: 1.2s blink step-end infinite;
+}
+#output-wrapper.init + #title {
+	visibility: hidden;
+}
 
 ul {
 	display: flex;
