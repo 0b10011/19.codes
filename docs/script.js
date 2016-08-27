@@ -14,6 +14,7 @@
 			'Bicyclist',
 			'Board Game Lover',
 			'Feminist',
+			'Pun Enthusiast',
 			'Vegetarian',
 			'Web Developer'
 		],
