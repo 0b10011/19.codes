@@ -5,6 +5,7 @@
 @media print {
 	/* Make phone number stick out more when printed */
 	ul { font-size: 1.7em !important }
+	li.screen { display: none }
 	#output-wrapper { display: none !important }
 	#title { display: inline !important }
 }
