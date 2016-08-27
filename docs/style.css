@@ -7,7 +7,10 @@
 	ul { font-size: 1.7em !important }
 	li.screen { display: none }
 	#output-wrapper { display: none !important }
-	#title { visibility: visible !important }
+	#title {
+		display: inline !important;
+		visibility: visible !important;
+	}
 }
 @media (min-aspect-ratio: 3/2) {
 	/* Always rely on vh when wide enough */
@@ -92,6 +95,7 @@ h1 > strong { color: #333 }
 }
 #output-wrapper.init + #title {
 	visibility: hidden;
+	display: none;
 }
 
 ul {
