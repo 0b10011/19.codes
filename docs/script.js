@@ -106,7 +106,9 @@
 			window.setTimeout(changeTitle, 120);
 		} else {
 			chooseTitle();
-			window.setTimeout(changeTitle, 2000);
+
+			// Switch titles after 3-5 seconds
+			window.setTimeout(changeTitle, Math.floor(Math.random() * 2000) + 3000);
 		}
 	}
 	outputWrapper.className = "init";
