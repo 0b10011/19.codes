@@ -70,7 +70,6 @@ h1 > strong { color: #333 }
 }
 #output-wrapper.init {
 	display: inline;
-	position: absolute;
 	margin-top: 0;
 }
 #output {
@@ -83,7 +82,7 @@ h1 > strong { color: #333 }
   animation: 1.2s blink step-end infinite;
 }
 #output-wrapper.init + #title {
-	visibility: hidden;
+	display: none;
 }
 
 ul {
