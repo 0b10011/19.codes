@@ -5,11 +5,17 @@
 		links = document.getElementsByTagName("a"),
 		titleEl = document.getElementById("title"),
 		key = 0,
-		titles = [ // No value should be longer than "Software Engineer"
+		titles = [
+			// No value should be longer than "Software Engineer"
+			// It also *has* to be the first entry
 			'Software Engineer',
-			'Web Developer',
+
 			'Backpacker',
-			'Vegetarian'
+			'Bicyclist',
+			'Board Game Lover',
+			'Feminist',
+			'Vegetarian',
+			'Web Developer'
 		],
 		title = titles[key],
 		titleLength = titles[key].length,
