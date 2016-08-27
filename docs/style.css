@@ -6,7 +6,7 @@
 	/* Make phone number stick out more when printed */
 	ul { font-size: 1.7em !important }
 	#output-wrapper { display: none !important }
-	#title { visibility: visible !important }
+	#title { display: inline !important }
 }
 @media (min-aspect-ratio: 3/2) {
 	/* Always rely on vh when wide enough */
