@@ -77,7 +77,7 @@ h1 > strong { color: #333 }
     color: transparent;
   }
   50% {
-    color: #333;
+    color: #555;
   }
 }
 #output-wrapper.init {
