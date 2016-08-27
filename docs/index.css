@@ -1,0 +1,98 @@
+@media print {
+	/* Make phone number stick out more when printed */
+	ul { font-size: 1.7em !important }
+	li.screen { display: none }
+}
+
+html, body { height: 100% }
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+pre, ul {
+	color: #ccc;
+}
+pre { font-size: 1.7em }
+
+ul {
+	display: flex;
+	font-size: 1.2em;
+}
+li {
+	margin: 0 1em;
+	list-style-type: none;
+}
+
+a,
+a:visited { color: #ccc }
+body:not([class^="hover-"]) li > a,
+li > a:hover,
+li > a:focus,
+li > a:active {
+	color: #333;
+}
+
+/* Section colors */
+li > a,
+.text,
+.blog,
+.social,
+.blog-social,
+.email,
+.here,
+.email-here {
+	transition: color .3s;
+}
+body:not([class^="hover-"]) .text {
+	color: #333;
+}
+body:not([class^="hover-"]) pre > .blog,
+body[class="hover-blog"] span.blog,
+body[class="hover-blog"] a.blog:active,
+body[class="hover-blog"] a.blog:focus,
+body[class="hover-blog"] a.blog:hover,
+body[class="hover-blog"] .blog-social {
+	color: #247;
+}
+body:not([class^="hover-"]) pre > .social,
+body[class="hover-social"] span.social,
+body[class="hover-social"] a.social:active,
+body[class="hover-social"] a.social:focus,
+body[class="hover-social"] a.social:hover,
+body[class="hover-social"] span.blog-social {
+	color: #a33;
+}
+body:not([class^="hover-"]) pre > .blog-social {
+	color: #635;
+}
+
+body:not([class^="hover-"]) pre > .email,
+body[class="hover-email"] span.email,
+body[class="hover-email"] a.email:active,
+body[class="hover-email"] a.email:focus,
+body[class="hover-email"] a.email:hover,
+body[class="hover-email"] .email-here {
+	color: #282;
+}
+body:not([class^="hover-"]) pre > .here,
+body[class="hover-here"] span.here,
+body[class="hover-here"] a.here:active,
+body[class="hover-here"] a.here:focus,
+body[class="hover-here"] a.here:hover,
+body[class="hover-here"] .email-here {
+	color: #a72;
+}
+body:not([class^="hover-"]) pre > .email-here {
+	color: #682;
+}
+
+/* Half-character offset for links with even number of characters */
+.half {
+	display: inline-block;
+	margin: 0;
+	transform: translate(-.3em);
+}

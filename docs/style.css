@@ -3,9 +3,6 @@
 	margin: 0;
 }
 @media print {
-	/* Make phone number stick out more when printed */
-	ul { font-size: 1.7em !important }
-	li.screen { display: none }
 	#output-wrapper { display: none !important }
 	#title {
 		display: inline !important;
@@ -26,48 +23,48 @@
 }
 
 * {
+	font-family: "source-code-pro", monospace;
 	line-height: 1.5;
 	margin: 0;
 	padding: 0;
 }
 * + * { margin-top: 1em }
-::selection {
-	background: #000;
-	color: #3c3;
-}
+* + br { margin-top: 0 }
 ::-moz-selection {
 	background: #000;
 	color: #3c3;
 }
-
-html,
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+::selection {
+	background: #000;
+	color: #3c3;
 }
+
 body {
 	font-size: 2.5vmin;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	color: #333;
-	overflow: hidden;
 }
-
-h1, pre, ul {
-	font-family: "source-code-pro", monospace;
-	color: #ccc;
-}
-h1, pre { font-size: 1.7em }
 
 h1 {
+	color: #ccc;
+}
+h1 { font-size: 1.7em }
+
+h1, h1 a {
 	font-weight: normal;
-	color: #555;
+	color: #ccc;
 	white-space: nowrap;
 }
-h1 > strong { color: #333 }
+h1 > a:active,
+h1 > a:focus,
+h1 > a:hover {
+	text-decoration: none;
+}
+h1 > a:active .link-underline,
+h1 > a:focus .link-underline,
+h1 > a:hover .link-underline {
+	text-decoration: underline;
+}
+h1 strong { color: #333 }
 #cursor,
 #title {
 	white-space: pre;
@@ -77,7 +74,7 @@ h1 > strong { color: #333 }
     color: transparent;
   }
   50% {
-    color: #555;
+    color: #ccc;
   }
 }
 #output-wrapper.init {
@@ -90,6 +87,14 @@ h1 > strong { color: #333 }
 #cursor {
 	margin-top: 0;
 }
+#cursor::-moz-selection {
+	background: none;
+	color: transparent;
+}
+#cursor::selection {
+	background: none;
+	color: transparent;
+}
 #cursor.blinking {
   animation: 1.2s blink step-end infinite;
 }
@@ -98,25 +103,13 @@ h1 > strong { color: #333 }
 	display: none;
 }
 
-ul {
-	display: flex;
-	font-size: 1.2em;
-}
-li {
-	margin: 0 1em;
-	list-style-type: none;
-}
-body:not([class^="hover-"]) li > a,
-li > a:hover,
-li > a:focus,
-li > a:active {
-	color: #333;
-}
-
 a {
 	text-decoration: none;
 	font-weight: bold;
-	color:#ccc;
+	color: #357;
+}
+a:visited {
+	color: #737;
 }
 a:active,
 a:focus,
@@ -126,65 +119,4 @@ a:hover {
 a:active,
 a:focus {
 	outline: 1px dotted rgba(0, 100, 0, .8);
-}
-
-/* Section colors */
-li > a,
-.text,
-.blog,
-.social,
-.blog-social,
-.email,
-.here,
-.email-here {
-	transition: color .3s;
-}
-body:not([class^="hover-"]) .text {
-	color: #333;
-}
-body:not([class^="hover-"]) pre > .blog,
-body[class="hover-blog"] span.blog,
-body[class="hover-blog"] a.blog:active,
-body[class="hover-blog"] a.blog:focus,
-body[class="hover-blog"] a.blog:hover,
-body[class="hover-blog"] .blog-social {
-	color: #247;
-}
-body:not([class^="hover-"]) pre > .social,
-body[class="hover-social"] span.social,
-body[class="hover-social"] a.social:active,
-body[class="hover-social"] a.social:focus,
-body[class="hover-social"] a.social:hover,
-body[class="hover-social"] span.blog-social {
-	color: #a33;
-}
-body:not([class^="hover-"]) pre > .blog-social {
-	color: #635;
-}
-
-body:not([class^="hover-"]) pre > .email,
-body[class="hover-email"] span.email,
-body[class="hover-email"] a.email:active,
-body[class="hover-email"] a.email:focus,
-body[class="hover-email"] a.email:hover,
-body[class="hover-email"] .email-here {
-	color: #282;
-}
-body:not([class^="hover-"]) pre > .here,
-body[class="hover-here"] span.here,
-body[class="hover-here"] a.here:active,
-body[class="hover-here"] a.here:focus,
-body[class="hover-here"] a.here:hover,
-body[class="hover-here"] .email-here {
-	color: #a72;
-}
-body:not([class^="hover-"]) pre > .email-here {
-	color: #682;
-}
-
-/* Half-character offset for links with even number of characters */
-.half {
-	display: inline-block;
-	margin: 0;
-	transform: translate(-.3em);
 }

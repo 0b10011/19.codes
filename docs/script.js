@@ -13,6 +13,7 @@
 			'Backpacker',
 			'Bicyclist',
 			'Board Game Lover',
+			'Environmentalist',
 			'Feminist',
 			'Pun Enthusiast',
 			'Vegetarian',
