@@ -8,6 +8,9 @@
 		display: inline !important;
 		visibility: visible !important;
 	}
+	a::after {
+		display: none;
+	}
 }
 @media (min-aspect-ratio: 3/2) {
 	/* Always rely on vh when wide enough */
@@ -122,4 +125,17 @@ a:hover {
 a:active,
 a:focus {
 	outline: 1px dotted rgba(0, 100, 0, .8);
+}
+a[href^="mailto:"]::after {
+	content: "\a0✉";
+	margin-left: -.3em;
+}
+a[href^="tel:"]::after {
+	content: "\a0✆";
+	margin-left: -.3em;
+}
+a[href^="http://"]:not([href*="19.codes"])::after,
+a[href^="https://"]:not([href*="19.codes"])::after {
+	content: "\a0↗";
+	margin-left: -.3em;
 }

@@ -27,6 +27,9 @@ li {
 	list-style-type: none;
 }
 
+pre a::after {
+	position:absolute;
+}
 a,
 a:visited { color: #ccc }
 body:not([class^="hover-"]) li > a,
