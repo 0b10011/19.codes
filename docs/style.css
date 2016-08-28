@@ -98,6 +98,9 @@ h1 strong { color: #333 }
 #cursor.blinking {
   animation: 1.2s blink step-end infinite;
 }
+#cursor.hidden {
+	color: transparent;
+}
 #output-wrapper.init + #title {
 	visibility: hidden;
 	display: none;

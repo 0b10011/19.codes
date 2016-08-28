@@ -21,6 +21,7 @@
 		],
 		pos = titles[key].length,
 		paused = true,
+		stopped = false,
 		writing = false,
 		outputWrapper = document.getElementById("output-wrapper"),
 		output = document.getElementById("output"),
@@ -94,7 +95,10 @@
 	}
 
 	function updateTitle() {
-		if (writing) {
+		if (stopped) {
+			output.textContent = titles[0];
+			cursor.className = "hidden";
+		} else if (writing) {
 			if (writeTitle()) {
 				schedule(updateTitle, 120);
 			} else {
@@ -113,4 +117,12 @@
 
 	outputWrapper.className = "init";
 	schedule(updateTitle, 3000);
+
+	window.addEventListener("keydown", function (e) {
+		if (e.defaultPrevented || e.key !== "Escape") {
+			return;
+		}
+
+		stopped = true;
+	});
 }());
