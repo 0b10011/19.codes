@@ -71,10 +71,10 @@ h1 strong { color: #333 }
 }
 @keyframes blink {
   from, to {
-    color: transparent;
+    color: #ccc;
   }
   50% {
-    color: #ccc;
+    color: transparent;
   }
 }
 #output-wrapper.init {

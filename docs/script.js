@@ -19,11 +19,9 @@
 			'Vegetarian',
 			'Web Developer'
 		],
-		title = titles[key],
-		titleLength = titles[key].length,
-		pos = title.length,
-		titleCount = titles.length - 1,
-		writing = 1,
+		pos = titles[key].length,
+		paused = true,
+		writing = false,
 		outputWrapper = document.getElementById("output-wrapper"),
 		output = document.getElementById("output"),
 		cursor = document.getElementById("cursor");
@@ -59,60 +57,60 @@
 		);
 	}
 
+	function run(callback) {
+		if (paused) {
+			cursor.className = "";
+			paused = false;
+		}
+
+		callback.call();
+	}
+	function schedule(callback, timeout) {
+		if (timeout > 1200) {
+			cursor.className = "blinking";
+			paused = true;
+		}
+
+		window.setTimeout(run, timeout, callback);
+	}
+
 	function chooseTitle() {
-		var nextKey = Math.floor(Math.random() * titleCount);
-
-		cursor.className = "blinking";
-
-		if (nextKey >= key) {
-			nextKey += 1;
-		}
-		key = nextKey;
-		writing = -1;
+		var nextKey = Math.floor(Math.random() * (titles.length - 1));
+		key = nextKey >= key ? nextKey + 1 : nextKey;
 	}
+
 	function deleteTitle() {
-		cursor.className = "";
+		pos -= 1;
+		output.textContent = titles[key].substring(0, pos);
 
-		if (title.length === 0) {
-			pos = 0;
-			writing = 1;
-			title = titles[key];
-			titleLength = title.length;
-			return;
-		}
-
-		title = title.substring(0, title.length - 1);
-
-		output.textContent = title;
+		return pos > 0;
 	}
+
 	function writeTitle() {
-		cursor.className = "";
-
-		if (pos === titleLength) {
-			writing = 0;
-			return;
-		}
-
 		pos += 1;
-		title = titles[key].substr(0, pos);
+		output.textContent = titles[key].substr(0, pos);
 
-		output.textContent = title;
+		return pos < titles[key].length;
 	}
-	function changeTitle() {
-		if (writing === -1) {
-			deleteTitle();
-			window.setTimeout(changeTitle, 100);
-		} else if (writing === 1) {
-			writeTitle();
-			window.setTimeout(changeTitle, 120);
-		} else {
-			chooseTitle();
 
-			// Switch titles after 3-5 seconds
-			window.setTimeout(changeTitle, Math.floor(Math.random() * 2000) + 3000);
+	function updateTitle() {
+		if (writing) {
+			if (writeTitle()) {
+				schedule(updateTitle, 120);
+			} else {
+				writing = false;
+				schedule(updateTitle, Math.floor(Math.random() * 2000) + 3000);
+			}
+		} else {
+			if (!deleteTitle()) {
+				chooseTitle();
+				writing = true;
+			}
+
+			schedule(updateTitle, 100);
 		}
 	}
+
 	outputWrapper.className = "init";
-	output.textContent = title;
-	changeTitle();
+	schedule(updateTitle, 3000);
 }());
