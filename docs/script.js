@@ -10,9 +10,10 @@
 			// It also *has* to be the first entry
 			'Software Engineer',
 
+			'Avid Walker',
 			'Backpacker',
-			'Bicyclist',
 			'Board Game Lover',
+			'Cyclist',
 			'Environmentalist',
 			'Feminist',
 			'Pun Enthusiast',
