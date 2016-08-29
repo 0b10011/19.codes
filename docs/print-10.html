@@ -10,25 +10,36 @@
 		margin: 0;
 	}
 	body {
-		margin: .5in .75in;
 		padding: 0;
 		display: flex;
 		flex-wrap: wrap;
 	}
 	iframe {
 		margin:0;
-		width: 88.9mm;
-		height: 50.8mm;
 		border:0;
 	}
 </style>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
-<iframe src="index.html"></iframe>
+<script>
+	function init () {
+		var iframe = window.document.createElement("iframe"),
+			params = new URLSearchParams(window.location.search.substr(1)),
+			count = Math.max(1, Math.min(100, parseInt(params.get("count"))) || 10),
+			width = params.get("width") || '',
+			height = params.get("height") || '',
+			margin = params.get("margin") || '';
+
+		// Verify actual (useful) lengths are specified
+		if (!width.match(/^(?:\d+|\d*\.\d+)(?:cm|in|mm)$/)) width = '3.5in';
+		if (!height.match(/^(?:\d+|\d*\.\d+)(?:cm|in|mm)$/)) height = '2in';
+		if (!margin.match(/^((?:\d+|\d*\.\d+)(?:cm|in|mm)(\s+|$))+$/)) margin = '.5in .75in';
+
+		iframe.setAttribute("src", "index.html");
+		iframe.setAttribute("style", "width:" + width + ";height:" + height);
+
+		document.body.setAttribute("style", "margin:" + margin);
+		for (i = 0; i < count; i += 1) {
+			document.body.appendChild(iframe.cloneNode());
+		}
+	}
+	window.onload = init;
+</script>
