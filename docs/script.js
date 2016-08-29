@@ -4,12 +4,11 @@
 	var i = 0,
 		links = document.getElementsByTagName("a"),
 		titleEl = document.getElementById("title"),
-		key = 0,
 		titles = [
-			// No value should be longer than "Software Engineer"
-			// It also *has* to be the first entry
-			'Software Engineer',
+			// No value should be longer than "Software Engineer",
+			// as anything longer will wrap or be cut off.
 
+			// Personal
 			'Avid Walker',
 			'Backpacker',
 			'Board Game Lover',
@@ -18,8 +17,16 @@
 			'Feminist',
 			'Pun Enthusiast',
 			'Vegetarian',
+
+			// Professional
+			'Online Ad Expert',
+			'SEO Specialist',
+			'Software Engineer',
+			'Web Consultant',
+			'Web Designer',
 			'Web Developer'
 		],
+		key = titles.indexOf(titleEl.textContent),
 		pos = titles[key].length,
 		paused = true,
 		stopped = false,
