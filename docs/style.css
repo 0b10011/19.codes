@@ -16,7 +16,7 @@
 	/* Always rely on vh when wide enough */
 	body { font-size: 3.3vh !important }
 }
-@media (min-width: 900px) and (min-height: 600px) {
+@media (min-width: 900px), (min-height: 900px) {
 	/* Shrink text down a bit on tablets/desktops */
 	body { font-size: 2vmin !important }
 }
@@ -43,6 +43,7 @@
 }
 
 body {
+	margin-top: 0;
 	font-size: 2.5vmin;
 	color: #333;
 }
