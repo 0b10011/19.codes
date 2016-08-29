@@ -2,44 +2,137 @@
 <meta charset="utf-8">
 <title>Brandon Frohs // 19.codes</title>
 <style type="text/css">
-	html {
+	@media print {
+		h1, h2, p, dl, ul {
+			display:none;
+		}
+	}
+	* {
 		margin: 0;
 		padding: 0;
+	}
+	* + * {
+		margin-top: 1em;
 	}
 	@page {
 		margin: 0;
 	}
-	body {
-		padding: 0;
+	body, code {
+		font-family: "source-code-pro", monospace;
+	}
+	code {
+		background: #f3f3f3;
+		border: 1px solid #d9d9d9;
+		padding: 0 .2em;
+		border-radius: .2em;
+	}
+	dl {
+		margin-bottom: 2em;
+	}
+	dt {
+		margin-top: 1em;
+		font-weight: bold;
+	}
+	li {
+		list-style-type: square;
+		margin-left: 1em;
+	}
+	#wrapper {
 		display: flex;
 		flex-wrap: wrap;
 	}
 	iframe {
 		margin:0;
 		border:0;
+		outline: 1px solid #ccc;
 	}
 </style>
 <script>
 	function init () {
 		var iframe = window.document.createElement("iframe"),
+			wrapper = document.getElementById("wrapper"),
 			params = new URLSearchParams(window.location.search.substr(1)),
 			count = Math.max(1, Math.min(100, parseInt(params.get("count"))) || 10),
+			margin = params.get("margin") || '',
 			width = params.get("width") || '',
-			height = params.get("height") || '',
-			margin = params.get("margin") || '';
+			height = params.get("height") || '';
 
 		// Verify actual (useful) lengths are specified
+		if (!margin.match(/^((?:\d+|\d*\.\d+)(?:cm|in|mm)(\s+|$))+$/)) margin = '.5in .75in';
 		if (!width.match(/^(?:\d+|\d*\.\d+)(?:cm|in|mm)$/)) width = '3.5in';
 		if (!height.match(/^(?:\d+|\d*\.\d+)(?:cm|in|mm)$/)) height = '2in';
-		if (!margin.match(/^((?:\d+|\d*\.\d+)(?:cm|in|mm)(\s+|$))+$/)) margin = '.5in .75in';
+
+		document.body.setAttribute("style", "margin:" + margin);
 
 		iframe.setAttribute("src", "index.html");
 		iframe.setAttribute("style", "width:" + width + ";height:" + height);
-
-		document.body.setAttribute("style", "margin:" + margin);
 		for (i = 0; i < count; i += 1) {
-			document.body.appendChild(iframe.cloneNode());
+			wrapper.appendChild(iframe.cloneNode());
 		}
 	}
 	window.onload = init;
 </script>
+<h1>Print</h1>
+<p>
+	This page is set up to easily print multiple cards at once.
+	The page is built using values set in the url,
+	or it falls back to defaults if valid values aren't provided.
+	Each card will automatically resize within its bounding box.
+	To print,
+	simply use your browser's print functionality
+	(this information will be hidden).
+</p>
+<dl>
+	<dt>count</dt>
+	<dd>Total number of cards to show. Default: <code>10</code></dd>
+	<dt>margin</dt>
+	<dd>
+		Page margin specified in <code>mm</code>, <code>cm</code>, or <code>in</code>.
+		Default: <code>.5in .75in</code>
+	</dd>
+	<dt>width</dt>
+	<dd>
+		Width of each card specified in <code>mm</code>, <code>cm</code>, or <code>in</code>.
+		Default: <code>3.5in</code>
+	</dd>
+	<dt>height</dt>
+	<dd>
+		Height of each card specified in <code>mm</code>, <code>cm</code>, or <code>in</code>.
+		Default: <code>2in</code>
+	</dd>
+</dl>
+<h2>
+	Presets from
+	<a href="https://en.wikipedia.org/wiki/Business_card#Dimensions">Wikipedia</a>:
+</h2>
+<ul>
+	<li>
+		<a href="./print.html?count=10&amp;margin=.5in+.75in&amp;width=3.5in&amp;height=2in"
+			 >United States, Canada</a>
+	</li>
+	<li>
+		<a href="./print.html?count=8&amp;margin=29.7mm+22.95mm&amp;width=85mm&amp;height=55mm"
+			 >Ireland, Italy, United Kingdom, France, Germany, Austria, Netherlands, Spain, Switzerland, Belgium, Slovenia, Portugal, Turkey</a>
+	</li>
+	<li>
+		<a href="./print.html?count=8&amp;margin=29.7mm+17.95mm&amp;width=90mm&amp;height=55mm"
+			 >Australia, Denmark, New Zealand, Norway, Taiwan, Sweden, Vietnam, India, Colombia</a>
+	</li>
+	<li>
+		<a href="./print.html?count=10&amp;margin=4.75mm+22.35mm&amp;width=85.6mm&amp;height=53.98mm"
+			 >ISO/IEC 7810 ID-1, credit card sized, Australia</a>
+	</li>
+	<li>
+		<a href="./print.html?count=10&amp;margin=9.7mm+33.95mm&amp;width=74mm&amp;height=52mm"
+			 >ISO 216, A8 sized</a>
+	</li>
+	<li>
+		<a href="./print.html?count=8&amp;margin=15.7mm+19.95mm&amp;width=88mm&amp;height=62mm"
+			 >ISO 216, B8 sized</a>
+	</li>
+	<li>
+		<a href="./print.html?count=8&amp;margin=25.7mm+26.95mm&amp;width=81mm&amp;height=57mm"
+			 >ISO 216, C8 sized</a>
+	</li>
+</ul>
+<div id="wrapper"></div>
