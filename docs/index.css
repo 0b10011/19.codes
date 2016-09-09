@@ -1,6 +1,7 @@
 @media print {
+	h1 { font-size: 1.85em !important }
 	/* Make phone number stick out more when printed */
-	ul { font-size: 1.7em !important }
+	ul { margin-top: .7em; font-size: 1.7em !important }
 	li.screen { display: none }
 }
 
