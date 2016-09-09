@@ -1,0 +1,32 @@
+@media print {
+	/* Make phone number stick out more when printed */
+	ul { font-size: 1.7em !important }
+	li.screen { display: none }
+}
+
+html, body { height: 100% }
+body {
+	box-sizing: border-box;
+	padding: 2em !important;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+p {
+	color: #333;
+	font-size: 1.5em;
+	text-align:center;
+}
+
+a,
+a:visited { color: #ccc }
+body:not([class^="hover-"]) li > a,
+li > a:hover,
+li > a:focus,
+li > a:active {
+	color: #333;
+}
