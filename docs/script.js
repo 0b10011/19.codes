@@ -28,7 +28,8 @@
 			'Web Designer',
 			'Web Developer'
 		],
-		key = titles.indexOf(titleEl.textContent),
+		defaultKey = titles.indexOf(titleEl.textContent),
+		key = defaultKey,
 		pos = titles[key].length,
 		paused = true,
 		stopped = false,
@@ -106,7 +107,7 @@
 
 	function updateTitle() {
 		if (stopped) {
-			output.textContent = titles[0];
+			output.textContent = titles[defaultKey];
 			cursor.className = "hidden";
 		} else if (writing) {
 			if (writeTitle()) {
