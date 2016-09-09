@@ -19,9 +19,11 @@
 			'Vegetarian',
 
 			// Professional
-			'Online Ad Expert',
-			'SEO Specialist',
+			'CSS Lover',
+			'Hacker',
+			'SEO Strategist',
 			'Software Engineer',
+			'Web Ad Specialist',
 			'Web Consultant',
 			'Web Designer',
 			'Web Developer'
