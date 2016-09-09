@@ -135,5 +135,6 @@
 		}
 
 		stopped = true;
+		updateTitle();
 	});
 }());
