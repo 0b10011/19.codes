@@ -21,9 +21,7 @@
 			// Professional
 			'CSS Lover',
 			'Hacker',
-			'SEO Strategist',
 			'Software Engineer',
-			'Web Ad Specialist',
 			'Web Consultant',
 			'Web Designer',
 			'Web Developer'
