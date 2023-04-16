@@ -21,10 +21,7 @@
 			// Professional
 			'CSS Lover',
 			'Hacker',
-			'Software Engineer',
-			'Web Consultant',
-			'Web Designer',
-			'Web Developer'
+			'Software Engineer'
 		],
 		defaultKey = titles.indexOf(titleEl.textContent),
 		key = defaultKey,
