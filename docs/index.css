@@ -44,9 +44,9 @@ li > a:active {
 /* Section colors */
 li > a,
 .text,
-.blog,
+.projects,
 .social,
-.blog-social,
+.projects-social,
 .email,
 .here,
 .email-here {
@@ -55,12 +55,12 @@ li > a,
 body:not([class^="hover-"]) .text {
 	color: #333;
 }
-body:not([class^="hover-"]) pre > .blog,
-body[class="hover-blog"] span.blog,
-body[class="hover-blog"] a.blog:active,
-body[class="hover-blog"] a.blog:focus,
-body[class="hover-blog"] a.blog:hover,
-body[class="hover-blog"] .blog-social {
+body:not([class^="hover-"]) pre > .projects,
+body[class="hover-projects"] span.projects,
+body[class="hover-projects"] a.projects:active,
+body[class="hover-projects"] a.projects:focus,
+body[class="hover-projects"] a.projects:hover,
+body[class="hover-projects"] .projects-social {
 	color: #247;
 }
 body:not([class^="hover-"]) pre > .social,
@@ -68,10 +68,10 @@ body[class="hover-social"] span.social,
 body[class="hover-social"] a.social:active,
 body[class="hover-social"] a.social:focus,
 body[class="hover-social"] a.social:hover,
-body[class="hover-social"] span.blog-social {
+body[class="hover-social"] span.projects-social {
 	color: #a33;
 }
-body:not([class^="hover-"]) pre > .blog-social {
+body:not([class^="hover-"]) pre > .projects-social {
 	color: #635;
 }
 
