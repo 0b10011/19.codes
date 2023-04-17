@@ -1,3 +1,29 @@
+:root {
+	--background: #fff;
+	--color: #333;
+	--color-faded: #ccc;
+	--color-projects: #247;
+	--color-email: #282;
+	--color-social: #a33;
+	--color-here: #a72;
+	--link: #357;
+	--link-visited: #737;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--background: #111;
+		--color: #ddd;
+		--color-faded: #777;
+		--color-projects: #47a;
+		--color-email: #393;
+		--color-social: #b44;
+		--color-here: #b83;
+		--link: #47a;
+		--link-visited: #949;
+	}
+}
+
 @page {
 	/* Avoid having content cut off when printing */
 	margin: 0;
@@ -33,30 +59,33 @@
 }
 * + * { margin-top: 1em }
 * + br { margin-top: 0 }
-::-moz-selection {
-	background: #000;
+::selection {
+	background-color: #000;
 	color: #3c3;
 }
-::selection {
-	background: #000;
-	color: #3c3;
+@media screen and (prefers-color-scheme: dark) {
+	::selection {
+		color: #000;
+		background-color: #3c3;
+	}
 }
 
 body {
 	margin-top: 0;
 	font-size: 2.5vmin;
-	color: #333;
+	background-color: var(--background);
+	color: var(--color);
 }
 
 h1 {
-	color: #999;
+	color: var(--color-faded);
 }
 h1 { font-size: 1.7em }
 
 /* :visited needed to override rule in index.css */
 h1, h1 a, h1 a:visited {
 	font-weight: normal;
-	color: #999;
+	color: var(--color-faded);
 	white-space: nowrap;
 }
 h1 > a:active,
@@ -69,14 +98,14 @@ h1 > a:focus .link-underline,
 h1 > a:hover .link-underline {
 	text-decoration: underline;
 }
-h1 strong { color: #333 }
+h1 strong { color: var(--color) }
 #cursor,
 #title {
 	white-space: pre;
 }
 @keyframes blink {
   from, to {
-    color: #999;
+    color: var(--color-faded);
   }
   50% {
     color: transparent;
@@ -91,10 +120,6 @@ h1 strong { color: #333 }
 }
 #cursor {
 	margin-top: 0;
-}
-#cursor::-moz-selection {
-	background: none;
-	color: transparent;
 }
 #cursor::selection {
 	background: none;
@@ -114,10 +139,10 @@ h1 strong { color: #333 }
 a {
 	text-decoration: none;
 	font-weight: bold;
-	color: #357;
+	color: var(--link);
 }
 a:visited {
-	color: #737;
+	color: var(--link-visited);
 }
 a:active,
 a:focus,

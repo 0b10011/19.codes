@@ -1,6 +1,6 @@
 @media print {
 	h1 { font-size: 1.85em !important }
-	h1, h1 a { color: #333 !important }
+	h1, h1 a { color: var(--color) !important }
 	/* Make phone number stick out more when printed */
 	ul { margin-top: .7em; font-size: 1.7em !important }
 	li.screen { display: none }
@@ -15,10 +15,10 @@ body {
 	overflow: hidden;
 }
 
-pre, ul {
-	color: #ccc;
-}
 pre { font-size: 1.7em }
+pre a::after {
+	position:absolute;
+}
 
 ul {
 	display: flex;
@@ -29,19 +29,13 @@ li {
 	list-style-type: none;
 }
 
-pre a::after {
-	position:absolute;
-}
-a,
-a:visited { color: #ccc }
-body:not([class^="hover-"]) li > a,
-li > a:hover,
-li > a:focus,
-li > a:active {
-	color: #333;
+/* Half-character offset for links with even number of characters */
+.half {
+	display: inline-block;
+	margin: 0;
+	transform: translate(-.3em);
 }
 
-/* Section colors */
 li > a,
 .text,
 .projects,
@@ -52,8 +46,31 @@ li > a,
 .email-here {
 	transition: color .3s;
 }
+
+body {
+	background-color: var(--background);
+}
+
+pre, ul {
+	color: var(--color-faded);
+}
+h1 > a > strong {
+	color: var(--color);
+}
+
+a,
+a:visited { color: var(--color-faded) }
+
+body:not([class^="hover-"]) li > a,
+li > a:hover,
+li > a:focus,
+li > a:active {
+	color: var(--color);
+}
+
+/* Section colors */
 body:not([class^="hover-"]) .text {
-	color: #333;
+	color: var(--color);
 }
 body:not([class^="hover-"]) pre > .projects,
 body[class="hover-projects"] span.projects,
@@ -61,7 +78,7 @@ body[class="hover-projects"] a.projects:active,
 body[class="hover-projects"] a.projects:focus,
 body[class="hover-projects"] a.projects:hover,
 body[class="hover-projects"] .projects-social {
-	color: #247;
+	color: var(--color-projects);
 }
 body:not([class^="hover-"]) pre > .social,
 body[class="hover-social"] span.social,
@@ -69,10 +86,7 @@ body[class="hover-social"] a.social:active,
 body[class="hover-social"] a.social:focus,
 body[class="hover-social"] a.social:hover,
 body[class="hover-social"] span.projects-social {
-	color: #a33;
-}
-body:not([class^="hover-"]) pre > .projects-social {
-	color: #635;
+	color: var(--color-social);
 }
 
 body:not([class^="hover-"]) pre > .email,
@@ -81,7 +95,7 @@ body[class="hover-email"] a.email:active,
 body[class="hover-email"] a.email:focus,
 body[class="hover-email"] a.email:hover,
 body[class="hover-email"] .email-here {
-	color: #282;
+	color: var(--color-email);
 }
 body:not([class^="hover-"]) pre > .here,
 body[class="hover-here"] span.here,
@@ -89,15 +103,5 @@ body[class="hover-here"] a.here:active,
 body[class="hover-here"] a.here:focus,
 body[class="hover-here"] a.here:hover,
 body[class="hover-here"] .email-here {
-	color: #a72;
-}
-body:not([class^="hover-"]) pre > .email-here {
-	color: #682;
-}
-
-/* Half-character offset for links with even number of characters */
-.half {
-	display: inline-block;
-	margin: 0;
-	transform: translate(-.3em);
+	color: var(--color-here);
 }
