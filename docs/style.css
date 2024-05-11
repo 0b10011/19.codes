@@ -51,6 +51,17 @@
 	* { color: #000 !important }
 }
 
+/* see `fonts/OFL.txt` for license */
+@font-face {
+	font-family: source-code-pro;
+	src: url('fonts/source-code-pro.ttf');
+}
+@font-face {
+	font-family: source-code-pro;
+	src: url('fonts/source-code-pro-italic.ttf');
+	font-style: italic;
+}
+
 * {
 	font-family: "source-code-pro", monospace;
 	line-height: 1.5;
