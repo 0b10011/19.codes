@@ -85,16 +85,15 @@ h1>a>strong {
 	color: var(--color);
 }
 
-a,
-a:visited {
-	color: var(--color-faded)
+a:any-link {
+	color: var(--color-faded);
+	outline-color: var(--color-faded);
 }
 
 body:not([class^="hover-"]) li>a,
-li>a:hover,
-li>a:focus,
-li>a:active {
+li>a:any-link {
 	color: var(--color);
+	outline-color: var(--color);
 }
 
 /* Section colors */
@@ -104,32 +103,28 @@ body:not([class^="hover-"]) .text {
 
 body:not([class^="hover-"]) pre>.projects,
 body[class="hover-projects"] span.projects,
-body[class="hover-projects"] a.projects:active,
-body[class="hover-projects"] a.projects:focus,
-body[class="hover-projects"] a.projects:hover {
+body[class="hover-projects"] a.projects:any-link {
 	color: var(--color-projects);
+	outline-color: var(--color-projects);
 }
 
 body:not([class^="hover-"]) pre>.github,
 body[class="hover-github"] span.github,
-body[class="hover-github"] a.github:active,
-body[class="hover-github"] a.github:focus,
-body[class="hover-github"] a.github:hover {
+body[class="hover-github"] a.github:any-link {
 	color: var(--color-github);
+	outline-color: var(--color-github);
 }
 
 body:not([class^="hover-"]) pre>.email,
 body[class="hover-email"] span.email,
-body[class="hover-email"] a.email:active,
-body[class="hover-email"] a.email:focus,
-body[class="hover-email"] a.email:hover {
+body[class="hover-email"] a.email:any-link {
 	color: var(--color-email);
+	outline-color: var(--color-email);
 }
 
 body:not([class^="hover-"]) pre>.bluesky,
 body[class="hover-bluesky"] span.bluesky,
-body[class="hover-bluesky"] a.bluesky:active,
-body[class="hover-bluesky"] a.bluesky:focus,
-body[class="hover-bluesky"] a.bluesky:hover {
+body[class="hover-bluesky"] a.bluesky:any-link {
 	color: var(--color-bluesky);
+	outline-color: var(--color-bluesky);
 }
