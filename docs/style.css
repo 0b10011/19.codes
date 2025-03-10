@@ -2,10 +2,10 @@
 	--background: #fff;
 	--color: #333;
 	--color-faded: #ccc;
-	--color-projects: #247;
+	--color-projects: #a72;
 	--color-email: #282;
 	--color-social: #a33;
-	--color-here: #a72;
+	--color-bluesky: #247;
 	--link: #357;
 	--link-visited: #737;
 }
@@ -15,10 +15,10 @@
 		--background: #111;
 		--color: #ddd;
 		--color-faded: #777;
-		--color-projects: #47a;
+		--color-projects: #b83;
 		--color-email: #393;
 		--color-social: #b44;
-		--color-here: #b83;
+		--color-bluesky: #47a;
 		--link: #47a;
 		--link-visited: #949;
 	}
