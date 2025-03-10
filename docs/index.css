@@ -17,6 +17,11 @@
 	li.screen {
 		display: none
 	}
+
+	.pronouns {
+		/* Adjust translation since link icons aren't present */
+		transform: translate(-.59em, -.4em) !important;
+	}
 }
 
 html,
