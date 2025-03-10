@@ -21,6 +21,8 @@
 			// Professional
 			'CSS Lover',
 			'Hacker',
+			'Rustacean',
+			'Builder',
 			'Software Engineer'
 		],
 		defaultKey = titles.indexOf(titleEl.textContent),
@@ -45,22 +47,22 @@
 		links[i].addEventListener(
 			"mouseover",
 			linkEnter,
-			{'passive': true}
+			{ 'passive': true }
 		);
 		links[i].addEventListener(
 			"focus",
 			linkEnter,
-			{'passive': true}
+			{ 'passive': true }
 		);
 		links[i].addEventListener(
 			"mouseout",
 			linkReset,
-			{'passive': true}
+			{ 'passive': true }
 		);
 		links[i].addEventListener(
 			"blur",
 			linkReset,
-			{'passive': true}
+			{ 'passive': true }
 		);
 	}
 
