@@ -4,7 +4,7 @@
 	--color-faded: #ccc;
 	--color-projects: #a72;
 	--color-email: #282;
-	--color-social: #a33;
+	--color-github: #a33;
 	--color-bluesky: #247;
 	--link: #357;
 	--link-visited: #737;
@@ -17,7 +17,7 @@
 		--color-faded: #777;
 		--color-projects: #b83;
 		--color-email: #393;
-		--color-social: #b44;
+		--color-github: #b44;
 		--color-bluesky: #47a;
 		--link: #47a;
 		--link-visited: #949;
@@ -172,8 +172,9 @@ a[href^="tel:"]::after {
 	content: "\a0✆";
 	margin-left: -.3em;
 }
-a[href^="http://"]:not([href*="19.codes"])::after,
-a[href^="https://"]:not([href*="19.codes"])::after {
+
+a[href^="http://"]:not([href^="http://19.codes"])::after,
+a[href^="https://"]:not([href^="https://19.codes"])::after {
 	content: "\a0↗";
 	margin-left: -.3em;
 }

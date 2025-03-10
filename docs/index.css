@@ -54,13 +54,19 @@ li {
 .half {
 	display: inline-block;
 	margin: 0;
-	transform: translate(-.3em);
+	transform: translateX(-.3em);
+}
+
+.pronouns {
+	display: inline-block;
+	margin: 0;
+	transform: translate(-.49em, -.4em);
 }
 
 li>a,
 .text,
 .projects,
-.social,
+.github,
 .email,
 .bluesky {
 	transition: color .3s;
@@ -104,12 +110,12 @@ body[class="hover-projects"] a.projects:hover {
 	color: var(--color-projects);
 }
 
-body:not([class^="hover-"]) pre>.social,
-body[class="hover-social"] span.social,
-body[class="hover-social"] a.social:active,
-body[class="hover-social"] a.social:focus,
-body[class="hover-social"] a.social:hover {
-	color: var(--color-social);
+body:not([class^="hover-"]) pre>.github,
+body[class="hover-github"] span.github,
+body[class="hover-github"] a.github:active,
+body[class="hover-github"] a.github:focus,
+body[class="hover-github"] a.github:hover {
+	color: var(--color-github);
 }
 
 body:not([class^="hover-"]) pre>.email,
