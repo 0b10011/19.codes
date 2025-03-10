@@ -36,8 +36,15 @@
 		cursor = document.getElementById("cursor");
 
 	function linkEnter(e) {
+		let target = e.target.getAttribute("data-target");
+
+		if (target === null) {
+			linkReset();
+			return;
+		}
+
 		document.body.className = "hover-"
-			+ e.target.getAttribute("data-target");
+			+ target;
 	}
 	function linkReset() {
 		document.body.className = '';
